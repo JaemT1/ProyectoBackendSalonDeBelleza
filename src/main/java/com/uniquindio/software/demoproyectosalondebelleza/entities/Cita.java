@@ -22,7 +22,6 @@ public class Cita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_cita;
-    //private int id_cliente;
     private Date fecha_cita;
     @ManyToOne
     @JoinColumn(name = "id_cliente")
@@ -30,7 +29,6 @@ public class Cita {
     @ManyToOne
     @JoinColumn(name = "id_empleado")
     private Usuario empleado;
-    //private int id_empleado;
     @Enumerated(EnumType.STRING)
     private EstadoCita estado_cita;
 
