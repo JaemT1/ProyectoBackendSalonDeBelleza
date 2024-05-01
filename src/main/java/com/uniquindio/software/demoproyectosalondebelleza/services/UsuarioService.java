@@ -9,4 +9,5 @@ public interface UsuarioService {
     List<Usuario> listarUsuarios();
     Usuario guardar(Usuario usuario);
     Optional<Usuario> buscarPorCorreo(String correo);
+    public String obtenerCorreoUsuario(String correo);
 }

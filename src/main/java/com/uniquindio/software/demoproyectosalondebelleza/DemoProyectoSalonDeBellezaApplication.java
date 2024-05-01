@@ -27,8 +27,10 @@ public class DemoProyectoSalonDeBellezaApplication {
 
     /*
         Usuarios agregados:
-        -maria.perez@email.com   clave123
-        -admin@salon.com         admin_secure
-        -seb.ortiz@email.com     añahogrider
+        -maria.perez@email.com                  clave123
+        -admin@salon.com                        admin_secure
+        -seb.ortiz@email.com                    añahogrider
+        -juan@gmail.com                         12345
+        -juane.rodriguezr@uqvirtual.edu.co      Emonuel12.
     */
 }

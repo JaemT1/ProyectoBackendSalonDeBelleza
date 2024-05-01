@@ -12,4 +12,7 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
     Optional<Usuario> obtenerUsuarioPorCorreo(String correo);
 
     Optional<Usuario> findByCorreo(String correo);
+
+    @Query("SELECT u.correo FROM Usuario u where u.correo = ?1")
+    String obtenerCorreoUsuario(String correo);
 }
