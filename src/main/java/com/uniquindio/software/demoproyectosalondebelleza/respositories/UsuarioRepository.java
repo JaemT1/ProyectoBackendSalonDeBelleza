@@ -1,6 +1,7 @@
 package com.uniquindio.software.demoproyectosalondebelleza.respositories;
 
 import com.uniquindio.software.demoproyectosalondebelleza.entities.Usuario;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -15,4 +16,8 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 
     @Query("SELECT u.correo FROM Usuario u where u.correo = ?1")
     String obtenerCorreoUsuario(String correo);
+
+    @Modifying
+    @Query("UPDATE Usuario u SET u.contrasena = ?1 WHERE u.correo = ?2")
+    void cambiarContrasena(String contrasenaNueva, String correo);
 }

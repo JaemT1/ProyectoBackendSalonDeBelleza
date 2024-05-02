@@ -20,17 +20,9 @@ public class DemoProyectoSalonDeBellezaApplication {
     @Bean
     public CommandLineRunner createPasswordsCommand(){
         return args -> {
-            System.out.println(passwordEncoder.encode("añahogrider"));
+            System.out.println(passwordEncoder.encode("12345"));
             System.out.println(passwordEncoder.encode("admin_secure"));
         };
     }
 
-    /*
-        Usuarios agregados:
-        -maria.perez@email.com                  clave123
-        -admin@salon.com                        admin_secure
-        -seb.ortiz@email.com                    añahogrider
-        -juan@gmail.com                         12345
-        -juane.rodriguezr@uqvirtual.edu.co      Emonuel12.
-    */
 }

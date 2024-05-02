@@ -10,4 +10,5 @@ public interface UsuarioService {
     Usuario guardar(Usuario usuario);
     Optional<Usuario> buscarPorCorreo(String correo);
     public String obtenerCorreoUsuario(String correo);
+    public void cambiarContrasena(String contrasena, String correo);
 }

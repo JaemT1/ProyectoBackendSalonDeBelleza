@@ -36,7 +36,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioDao.obtenerUsuarioPorCorreo(correo);
     }
 
-    public void enviarCorreoCodigoVerificacion(String correoDestino, int codigoVerificacion) {
+    public void enviarCorreoCodigoVerificacion(String correoDestino, String codigoVerificacion) {
         String contenido = "<html>" +
                 "<body>" +
                 "<p>Digite este código en el formulario para continuar con su cambio de contraseña:</p>" +
@@ -47,18 +47,23 @@ public class UsuarioServiceImpl implements UsuarioService {
         mailSenderService.enviarEmail("Código de Verificación", contenido, correoDestino);
     }
 
-    public int generarCodigoVerificacion(int cantDigitos) {
+    public String generarCodigoVerificacion(int cantDigitos) {
         if (cantDigitos < 1) {
             throw new IllegalArgumentException("El número de dígitos debe ser al menos 1.");
         }
         int min = (int) Math.pow(10, cantDigitos - 1); // Mínimo valor posible
         int max = (int) Math.pow(10, cantDigitos) - 1; // Máximo valor posible
         Random random = new Random();
-        int codigoVerificacion = random.nextInt(max - min + 1) + min;
-        return codigoVerificacion;
+        return String.valueOf(random.nextInt(max - min + 1) + min);
     }
 
     @Override
     @Transactional(readOnly = true)
     public String obtenerCorreoUsuario(String correo) {return usuarioDao.obtenerCorreoUsuario(correo);}
+
+    @Override
+    @Transactional
+    public void cambiarContrasena(String contrasenaNueva, String correo) {
+        usuarioDao.cambiarContrasena(contrasenaNueva, correo);
+    }
 }
