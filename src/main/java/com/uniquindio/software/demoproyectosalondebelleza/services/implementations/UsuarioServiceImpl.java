@@ -22,18 +22,31 @@ public class UsuarioServiceImpl implements UsuarioService {
     private MailSenderImpl mailSenderService;
 
     @Override
+    @Transactional(readOnly = true)
     public List<Usuario> listarUsuarios() {
         return (List<Usuario>)usuarioDao.findAll();
     }
 
     @Override
+    @Transactional
     public Usuario guardar(Usuario usuario) {
         return usuarioDao.save(usuario);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<Usuario> buscarPorCorreo(String correo) {
         return usuarioDao.obtenerUsuarioPorCorreo(correo);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public String obtenerCorreoUsuario(String correo) {return usuarioDao.obtenerCorreoUsuario(correo);}
+
+    @Override
+    @Transactional
+    public void cambiarContrasena(String contrasenaNueva, String correo) {
+        usuarioDao.cambiarContrasena(contrasenaNueva, correo);
     }
 
     public void enviarCorreoCodigoVerificacion(String correoDestino, String codigoVerificacion) {
@@ -57,13 +70,4 @@ public class UsuarioServiceImpl implements UsuarioService {
         return String.valueOf(random.nextInt(max - min + 1) + min);
     }
 
-    @Override
-    @Transactional(readOnly = true)
-    public String obtenerCorreoUsuario(String correo) {return usuarioDao.obtenerCorreoUsuario(correo);}
-
-    @Override
-    @Transactional
-    public void cambiarContrasena(String contrasenaNueva, String correo) {
-        usuarioDao.cambiarContrasena(contrasenaNueva, correo);
-    }
 }

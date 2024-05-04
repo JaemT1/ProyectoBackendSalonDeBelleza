@@ -24,5 +24,4 @@ public class DemoProyectoSalonDeBellezaApplication {
             System.out.println(passwordEncoder.encode("admin_secure"));
         };
     }
-
 }

@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class Cita {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_cita;
     private Date fecha_cita;
+    private Time hora_cita;
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Usuario cliente;

@@ -6,6 +6,7 @@ import com.uniquindio.software.demoproyectosalondebelleza.entities.Usuario;
 import com.uniquindio.software.demoproyectosalondebelleza.services.implementations.AuthenticationServiceImpl;
 import com.uniquindio.software.demoproyectosalondebelleza.services.implementations.UsuarioServiceImpl;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

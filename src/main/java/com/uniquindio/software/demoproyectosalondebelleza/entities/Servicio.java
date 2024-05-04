@@ -25,6 +25,10 @@ public class Servicio {
     private int duracion_estimada;
     private double precio;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "categoriaServicio_id_categoria")
+    private CategoriaServicio categoriaServicio;
+
     @ManyToMany
     @JoinTable(name = "servicios_cita",
             joinColumns = @JoinColumn(name = "id_cita"),
