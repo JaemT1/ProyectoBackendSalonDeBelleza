@@ -1,4 +1,4 @@
-package com.uniquindio.software.demoproyectosalondebelleza.respositories;
+package com.uniquindio.software.demoproyectosalondebelleza.repositories;
 
 import com.uniquindio.software.demoproyectosalondebelleza.entities.Usuario;
 import org.springframework.data.jpa.repository.Modifying;

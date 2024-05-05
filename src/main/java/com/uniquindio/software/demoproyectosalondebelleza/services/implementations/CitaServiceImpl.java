@@ -1,7 +1,7 @@
 package com.uniquindio.software.demoproyectosalondebelleza.services.implementations;
 
 import com.uniquindio.software.demoproyectosalondebelleza.entities.Cita;
-import com.uniquindio.software.demoproyectosalondebelleza.respositories.CitaRepository;
+import com.uniquindio.software.demoproyectosalondebelleza.repositories.CitaRepository;
 import com.uniquindio.software.demoproyectosalondebelleza.services.CitaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

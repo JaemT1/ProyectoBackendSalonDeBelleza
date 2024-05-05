@@ -14,14 +14,18 @@ public class DemoProyectoSalonDeBellezaApplication {
         SpringApplication.run(DemoProyectoSalonDeBellezaApplication.class, args);
     }
 
+    /*
     @Autowired
     private PasswordEncoder passwordEncoder;
+
 
     @Bean
     public CommandLineRunner createPasswordsCommand(){
         return args -> {
             System.out.println(passwordEncoder.encode("12345"));
             System.out.println(passwordEncoder.encode("admin_secure"));
+            System.out.println(passwordEncoder.upgradeEncoding("admin_secure"));
         };
     }
+    */
 }

@@ -1,7 +1,7 @@
 package com.uniquindio.software.demoproyectosalondebelleza.services.implementations;
 
 import com.uniquindio.software.demoproyectosalondebelleza.entities.Producto;
-import com.uniquindio.software.demoproyectosalondebelleza.respositories.ProductoRepository;
+import com.uniquindio.software.demoproyectosalondebelleza.repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

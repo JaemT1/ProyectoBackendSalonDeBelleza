@@ -4,10 +4,9 @@ import com.uniquindio.software.demoproyectosalondebelleza.entities.Usuario;
 import com.uniquindio.software.demoproyectosalondebelleza.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.uniquindio.software.demoproyectosalondebelleza.respositories.UsuarioRepository;
+import com.uniquindio.software.demoproyectosalondebelleza.repositories.UsuarioRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;

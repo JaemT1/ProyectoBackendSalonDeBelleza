@@ -1,10 +1,7 @@
 package com.uniquindio.software.demoproyectosalondebelleza.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +17,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="usuario")
+@Builder
 public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,4 +76,6 @@ public class Usuario implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+
 }

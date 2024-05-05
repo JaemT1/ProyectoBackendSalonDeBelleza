@@ -37,7 +37,7 @@ public class AuthenticationController {
 
     @PreAuthorize("permitAll")
     @PostMapping("/signup")
-    public ResponseEntity<Usuario> signUp(@RequestBody @Valid Usuario usuario){
+    public ResponseEntity<Usuario> signUp(@RequestBody @Valid Usuario usuario) throws Exception {
         return ResponseEntity.ok(usuarioDao.guardar(usuario));
     }
 
